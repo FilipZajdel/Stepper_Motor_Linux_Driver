@@ -1,0 +1,19 @@
+/dts-v1/;
+/plugin/;
+
+/{
+	compatible = "brcm,bcm2708";
+
+	fragment@0 {
+		target-path = "/";
+		
+		__overlay__ {
+			servo {
+				compatible = "servo";
+				coil-gpios = <&gpio 21 0>, <&gpio 20 0>, 
+							 <&gpio 16 0>, <&gpio 12 0>;
+				detector-gpios = <&gpio 26 0>;
+			};
+		};
+	};
+};
